@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 Romain Brault <mail@romainbrault.com>
+# SPDX-FileCopyrightText: © 2024 Romain Brault <mail@romainbrault.com>
 #
 # SPDX-License-Identifier: MIT OR Apache-2.0
 
@@ -17,7 +17,6 @@ keywords = [
     "Python",
 ]
 license = "MIT OR Apache-2.0"
-
 license-files.paths = [
     "LICENSES/MIT.txt",
     "LICENSES/CC0-1.0.txt",
@@ -49,8 +48,13 @@ dynamic = [
     "version",
 ]
 dependencies = [
+    "beartype>=0.18,!=0.19",
     "distro>=1.9",
+    "python-dotenv>=1.0.1",
+    "rich-click>=1.8.4",
 ]
+
+scripts.test-rtd-linux-py313-test = "test_rtd_linux_py313_test.cli.entrypoint:test_rtd_linux_py313_test"
 
 [tool.pyproject-fmt]
 column_width = 79
@@ -69,7 +73,6 @@ cache-keys = [
 dev-dependencies = [
     "scalene>=1.5.19",
     "pynvim>=0.4.3",
-    "beartype>=0.18.5",
     "hypothesis>=6.110.1",
     "pylint>=3.2.6",
     "pytest>=8.3.2",
